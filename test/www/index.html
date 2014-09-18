@@ -20,15 +20,58 @@
     under the License.
 -->
 <html>
-    <head>
-       
-        <title>Calculation</title>
-        
-    </head>
-    <body>
-       <h1>Tables</h1><br>
-       
-       Enter The Table You Need <input type="text" name="name" id="txt_name" size="30" maxlength="70">
-       
-    </body>
+	<head>
+		<title>
+	Simple Calulation
+		</title>
+	</head>
+	<body>
+	<h1>Tables For Kidz</h1>
+	Which Table you want <input type="text" id="valueone"><br><br>
+	Tables upto (e.g 10..) <input type="text" id="valuetwo"><br><br>
+	<!-- Out Put<textarea id="output"></textarea><br> -->
+	<!-- <input type="textarea" id="output" rows="50" cols="50"><br><br> -->
+	<input type="button" value="Make Table" onclick="add()"><br>
+	<p id="demo"></p><br>
+
+	<script type="text/javascript">
+	function add()
+	{
+	var a=document.getElementById("valueone").value;
+	var b=document.getElementById("valuetwo").value;
+	//var c = parseFloat(a) + parseFloat(b);
+	//alert(c)
+	var x="Hello";
+	var i,text="";
+	
+	if(a=="" || b=="")
+	{
+		document.getElementById("demo").innerHTML = "Please Enter The Number"
+	}
+	else
+{
+	if(b>=0 && a>=0)
+	{
+		if(b==0 || a==0)
+		{
+			document.getElementById("demo").innerHTML="Any thing multiple by zero is zero"
+		}
+		else
+		{
+			for(i=1;i<=b;i++)
+			{
+       		text += +a + " * " +i+ " = "+(i*a)+"<br>";
+			}
+		document.getElementById("demo").innerHTML = text;
+		}
+	}
+	else
+	{
+		document.getElementById("demo").innerHTML = "Enter A valid Number to make tables";
+	}
+}
+   }
+    </script>
+	</body>
 </html>
+
